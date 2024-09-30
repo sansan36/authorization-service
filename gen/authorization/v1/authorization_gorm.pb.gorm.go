@@ -1,4 +1,4 @@
-package userv1
+package authorizationv1
 
 import (
 	context "context"

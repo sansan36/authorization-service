@@ -1,13 +1,13 @@
 syntax = "proto3";
 
-package user.v1;
+package authorization.v1;
 
 import "common/v1/common.proto";
 import "google/api/annotations.proto";
-import "user/v1/user_gorm.proto";
+import "authorization/v1/authorization_gorm.proto";
 import "buf/validate/validate.proto";
 
-service UserService {
+service AuthorizationService {
     rpc GetUserList(GetUserListRequest) returns (GetUserListResponse) {
         option (google.api.http) = {get: "/v1/users"};
     }

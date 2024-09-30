@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	userv1 "github.com/sansan36/authorization-service/gen/user/v1"
+	userv1 "github.com/sansan36/authorization-service/gen/authorization/v1"
 	"github.com/sansan36/authorization-service/libs"
 	"github.com/sansan36/authorization-service/libs/logger"
 

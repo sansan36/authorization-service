@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
+	userv1 "github.com/sansan36/authorization-service/gen/authorization/v1"
 	commonv1 "github.com/sansan36/authorization-service/gen/common/v1"
-	userv1 "github.com/sansan36/authorization-service/gen/user/v1"
 	"github.com/sansan36/authorization-service/libs/logger"
 	"gorm.io/gorm"
 )

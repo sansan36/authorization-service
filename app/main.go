@@ -2,8 +2,8 @@ package main
 
 import (
 	"github.com/sansan36/authorization-service/core"
-	userv1 "github.com/sansan36/authorization-service/gen/user/v1"
-	"github.com/sansan36/authorization-service/gen/user/v1/userv1connect"
+	userv1 "github.com/sansan36/authorization-service/gen/authorization/v1"
+	"github.com/sansan36/authorization-service/gen/authorization/v1/authorizationv1connect"
 	"github.com/sansan36/authorization-service/handler"
 	"github.com/sansan36/authorization-service/repository"
 )
@@ -20,7 +20,7 @@ func main() {
 	serviceHandler := handler.NewUserHandler(
 		repository.NewUserRepository(core.DBMain),
 	)
-	path, handler := userv1connect.NewUserServiceHandler(
+	path, handler := authorizationv1connect.NewAuthorizationServiceHandler(
 		serviceHandler,
 		core.NewInterceotors(),
 	)
@@ -29,7 +29,7 @@ func main() {
 	core.RunServer(core.ServerSpec{
 		RpcPath:                            path,
 		RpcHandler:                         handler,
-		RegisterServiceHandlerFromEndpoint: userv1.RegisterUserServiceHandlerFromEndpoint,
+		RegisterServiceHandlerFromEndpoint: userv1.RegisterAuthorizationServiceHandlerFromEndpoint,
 		RpcPort:                            rpcPort,
 		HttpPort:                           httpPort,
 	})

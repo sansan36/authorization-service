@@ -8,16 +8,16 @@ import (
 
 	"connectrpc.com/connect"
 	"github.com/bufbuild/protovalidate-go"
+	userv1 "github.com/sansan36/authorization-service/gen/authorization/v1"
+	"github.com/sansan36/authorization-service/gen/authorization/v1/authorizationv1connect"
 	commonv1 "github.com/sansan36/authorization-service/gen/common/v1"
-	userv1 "github.com/sansan36/authorization-service/gen/user/v1"
-	"github.com/sansan36/authorization-service/gen/user/v1/userv1connect"
 	"github.com/sansan36/authorization-service/libs/auth"
 	"github.com/sansan36/authorization-service/repository"
 	"google.golang.org/protobuf/types/known/timestamppb"
 )
 
 type userServiceHandler struct {
-	userv1connect.UnimplementedUserServiceHandler
+	authorizationv1connect.UnimplementedAuthorizationServiceHandler
 	Repo repository.UserRepository
 }
 

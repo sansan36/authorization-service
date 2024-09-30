@@ -1,5 +1,5 @@
 services:
-  user:
+  authorization:
     build:
       context: .
       args:
@@ -21,7 +21,7 @@ services:
   nginx:
     image: nginx:${NGINX_TAG}
     depends_on:
-      user:
+      authorization:
         condition: service_started
     ports:
       - "8000:80"
